@@ -6,8 +6,15 @@
     "miniprogram": {
       "list": [
         {
-          "name": "规格格式化",
+          "name": "商品规格格式化",
           "pathName": "exercise/pages/specs/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "demo",
+          "pathName": "exercise/pages/demo/index",
           "query": "",
           "launchMode": "default",
           "scene": null

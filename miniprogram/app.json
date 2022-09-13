@@ -20,12 +20,15 @@
     "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "black"
   },
-  "subpackages": [{
-    "root": "exercise",
-    "pages": [
-      "pages/specs/index"
-    ]
-  }],
+  "subpackages": [
+    {
+      "root": "exercise",
+      "pages": [
+        "pages/specs/index",
+        "pages/demo/index"
+      ]
+    }
+  ],
   "sitemapLocation": "sitemap.json",
   "style": "v2"
 }
