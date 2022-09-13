@@ -1,0 +1,22 @@
+image,
+video {
+  display: block;
+}
+
+view {
+  box-sizing: border-box;
+}
+
+.test {
+  width: 100px;
+}
+
+.item {
+  border: 1px solid #000;
+}
+.activeChosen {
+  background-color: rgba(87, 167, 233, 0.379);
+}
+.disabledChosen {
+  background-color: rgba(113, 113, 113, 0.504);
+}

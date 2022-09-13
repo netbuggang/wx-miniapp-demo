@@ -1,0 +1,19 @@
+<view wx:for="{{specGroup}}" wx:key="index">
+  <view>{{item.name}}</view>
+  <view
+    bind:tap="choose"
+    data-info="{{specItem}}"
+    wx:for="{{item.list}}"
+    wx:for-item="specItem"
+    wx:for-index="specIndex"
+    wx:key="specIndex"
+    class="item {{specItem.isActive?'activeChosen':''}} {{specItem.isDisabled?'disabledChosen':''}}"
+  >
+    {{specItem.value}}
+  </view>
+</view>
+
+<view wx:if="{{activeSkuInfo}}" style="margin-top: 20rpx;">
+  <view>选中商品--- {{activeSkuInfo.name}}</view>
+  <view>sku code--- {{activeSkuInfo.code}}</view>
+</view>
