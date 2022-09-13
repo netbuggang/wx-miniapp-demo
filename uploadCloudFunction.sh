@@ -1,0 +1,1 @@
+"/Applications/wechatwebdevtools.app/Contents/MacOS/cli" cloud functions deploy --e cloud1-2gjb0mdeda1dac5a --n quickstartFunctions --r --project "/Users/garen/workspace/my/wx-miniapp-demo" --report_first --report
