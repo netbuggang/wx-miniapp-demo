@@ -1,0 +1,10 @@
+<overlay id="overlay" maskCustomStyle="background-color: rgba(0, 0, 0, 0.9);">
+  <view class="plain-overlay-container">
+    <view class="plain-overlay-wrap">
+      <video id="$dialog-video" class="img-width-100" style="height:{{videoHeight}}rpx;" src="{{dialog.path}}"
+        poster="{{dialog.poster}}" object-fit="contain" autoplay="{{true}}" loop="{{false}}" muted="{{true}}"
+        show-mute-btn="{{true}}" play-btn-position="center" bindloadedmetadata="getVideoH"></video>
+    </view>
+    <view class="plain-overlay-close" catchtap="close"></view>
+  </view>
+</overlay>

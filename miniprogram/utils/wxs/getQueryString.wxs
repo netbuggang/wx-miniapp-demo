@@ -1,0 +1,21 @@
+/**获取链接参数
+ * 
+ * @param url 
+ */
+module.exports = function (url) {
+  var itemArr = [];
+  var itemObj = {};
+  var search = url.substring(url.lastIndexOf("?") + 1, url.length).split("&");
+
+  for (var index = 0; index < search.length; index++) {
+    var item = search[index];
+    itemArr.push(item.split("="));
+  }
+
+  for (var index = 0; index < itemArr.length; index++) {
+    var item = itemArr[index];
+    itemObj[item[0]] = item[1];
+  }
+
+  return itemObj;
+}

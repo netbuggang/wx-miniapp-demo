@@ -1,0 +1,104 @@
+var singleType = 'singletonLettering'
+var packageType = 'packageGoodsLettering'
+
+function replaceVal(str, s1, s2) {
+  if (!!str && !!s1) {
+    if (str) {
+      return str.replace(s1, s2) == "undefined" ? '' : str.replace(s1, s2).replace("(", "").replace(")", "")
+    } else {
+      return '';
+    }
+  } else {
+    return str;
+  }
+}
+
+function setEngraveContent(item) {
+  var title = item.skuName;
+  var explain = item.symbolCode || "";
+  var value = replaceVal(item.content, item.symbolCode, "");
+
+  return title + "|" + "(" + explain + ")" + value;
+}
+
+/**获取单品刻字内容
+ * 
+ * @param data 
+ */
+function single(singletonLettering) {
+  return replaceVal(singletonLettering.content, singletonLettering.symbolCode, "");
+}
+
+/**获取套组刻字内容
+ * 
+ * @param data 
+ */
+function package(packageGoodsLettering) {
+  if (packageGoodsLettering[0].isSame) {
+    // 套组刻相同的 3333 
+    return replaceVal(packageGoodsLettering[0].content, packageGoodsLettering[0].symbolCode, "");
+  } else {
+    // 套组刻不同的 N°1966|(唇印)111;BR20|(唇印)3333 
+    var content = [];
+    for (var index = 0; index < packageGoodsLettering.length; index++) {
+      var item = packageGoodsLettering[index];
+      content.push(setEngraveContent(item));
+    }
+    return content.join(";");
+  }
+}
+
+/**
+ * 格式化刻字内容
+ * @param customInfos 刻字信息
+ * @returns 
+ */
+function engraveValueFilter(customInfos) {
+  customInfos = customInfos || []
+  if (customInfos.length == 0) {
+    return ''
+  }
+  var keZiInfo = null
+  customInfos.forEach(function (item) {
+    if (
+      item.name === singleType ||
+      item.name === packageType
+    ) {
+      keZiInfo = JSON.parse(item.value)
+    }
+  })
+  if (keZiInfo) {
+    // var isArr = Array.isArray(keZiInfo)
+    // es3 判断是否是数组
+    formatEngraveContent(keZiInfo)
+    var isArr = keZiInfo.constructor === [].constructor
+    // console.log(isArr)
+    var str = ''
+    if (isArr) {
+      keZiInfo.forEach(function (item) {
+        str += formatEngraveContent(item) + ';'
+      })
+    } else {
+      str = formatEngraveContent(keZiInfo, true)
+    }
+    return str
+  } else {
+    return ''
+  }
+}
+
+// 格式化刻字
+function formatEngraveContent(keZiInfo, hideSkuName) {
+  var content = keZiInfo.content || ''
+  var skuName = keZiInfo.skuName || ''
+  if (hideSkuName) {
+    return content
+  }
+  return skuName ? skuName + '|' + content : content
+}
+
+module.exports = {
+  single: single,
+  package: package,
+  engraveValueFilter: engraveValueFilter
+}

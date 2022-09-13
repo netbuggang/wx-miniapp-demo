@@ -1,0 +1,26 @@
+<overlay id="overlay" maskCustomStyle="background-color: rgba(0, 0, 0, 0.6);">
+  <view class="plain-overlay-container flex-center">
+    <view class="plain-overlay-wrap">
+      <view class="plain-header">
+        <block wx:if="{{dialog.title}}">
+          <view class="points-image-wrap {{dialog.type}}"></view>
+        </block>
+      </view>
+      <view class="plain-body __dialog-body">
+        <view wx:for="{{dialog.content}}" wx:key="index" class="content">{{item}}</view>
+        <view wx:if="{{dialog.tips}}" class="tips">
+          <view wx:for="{{dialog.tips}}" wx:key="index">{{item}}</view>
+        </view>
+      </view>
+      <view class="plain-footer">
+        <button class="action close" bindtap="onSubmit" data-result="{{false}}">
+          {{dialog.cancelText}}
+        </button>
+        <button class="action submit" bindtap="onSubmit" data-result="{{true}}">
+          {{dialog.confirmText}}
+        </button>
+      </view>
+      <view wx:if="{{showCloseBtn && dialog.showCloseBtn}}" class="plain-overlay-close" bindtap="close"></view>
+    </view>
+  </view>
+</overlay>

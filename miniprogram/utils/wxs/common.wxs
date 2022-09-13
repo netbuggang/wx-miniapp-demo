@@ -1,0 +1,91 @@
+var fileExt = function (value) {
+  if (!value) return ''
+  return value.substring(value.lastIndexOf('.') + 1)
+}
+var inArray = function (value, array = []) {
+  return array.indexOf(value) !== -1
+}
+var headPicture = function (currentSku) {
+  if (!currentSku) return
+  if (currentSku.headPicture)
+    return currentSku.headPicture
+  if (!currentSku.pictureDTO) return
+  var bannerPicture = currentSku.pictureDTO.filter(function (it) {
+    return it.type == 2
+  })
+  if (bannerPicture.length)
+    return bannerPicture[0].pictureUrl
+
+}
+var mathMax = function (a, b) {
+  return Math.max(a, b)
+}
+var replaceStr = function (str) {
+  var re = getRegExp('\W', "g")
+  return str.replace(re, '')
+}
+var splitStr = function (str, symbol) {
+  return str ? str.split(symbol) : ""
+}
+
+/**将日期格式化成指定格式的字符串
+ * 
+ * @param date 要格式化的日期
+ * @param fmt 目标字符串格式，支持的字符有：Y,M,D,q,w,H,h,m,S，默认：YYYY-MM-DD HH:mm:ss
+ * @returns 返回格式化后的日期字符串
+ */
+var formatDate = function (date, fmt) {
+  // 处理带时区的日期，例如: 2021-08-10T23:51:02.005+0800"
+  if (typeof date === "string" && date.indexOf("T") > -1) {
+    var arr = date.split("T");
+    var d = arr[0];
+    var darr = d.split('-');
+    var t = arr[1];
+    var tarr = t.split('+');
+    var marr = tarr[0].split(':');
+    var tzone = +tarr[1].slice(0, 2)
+    var dd = parseInt(darr[0]) + "/" + parseInt(darr[1]) + "/" + parseInt(darr[2]) + " " + parseInt(marr[0]) + ":" + parseInt(marr[1]) + ":" + parseInt(marr[2]);
+    var time = getDate(Date.parse(dd));
+    time.setTime(time.setHours(time.getHours() + (8 - tzone)));
+    date = time;
+  } else {
+    date = getDate(date.toString().replace(getRegExp("-", "g"), "/")); // 兼容IOS
+  }
+  fmt = fmt || "YYYY-MM-DD HH:mm:ss";
+  var obj = {
+    Y: date.getFullYear(),// 年份，注意必须用getFullYear
+    M: date.getMonth() + 1,// 月份，注意是从0-11
+    D: date.getDate(),// 日期
+    q: Math.floor((date.getMonth() + 3) / 3),// 季度
+    w: date.getDay(),// 星期，注意是0-6
+    H: date.getHours(),// 24小时制
+    h: date.getHours() % 12 == 0 ? 12 : date.getHours() % 12,// 12小时制
+    m: date.getMinutes(),// 分钟
+    s: date.getSeconds(),// 秒
+    S: date.getMilliseconds()// 毫秒
+  };
+  var week = ["天", "一", "二", "三", "四", "五", "六"];
+  var objKeys = ['Y', "M", "D", "q", "w", "H", "h", "m", "s", "S"];
+  for (var i = 0; i < objKeys.length; i++) {
+    var key = objKeys[i];
+    fmt = fmt.replace(getRegExp(key + "+", "g"), function (m) {
+      var val = obj[key] + "";
+      if (key == "w") return (m.length > 2 ? "星期" : "周") + week[val];
+      var len = val.length;
+      for (var j = 0; j < m.length - len; j++)
+        val = "0" + val;
+      return m.length == 1 ? val : val.substring(val.length - m.length);
+    });
+  }
+  return fmt;
+}
+
+module.exports = {
+  inArray: inArray,
+  fileExt: fileExt,
+  replaceStr: replaceStr,
+  headPicture: headPicture,
+  mathMax: mathMax,
+  splitStr: splitStr,
+  formatDate: formatDate
+}

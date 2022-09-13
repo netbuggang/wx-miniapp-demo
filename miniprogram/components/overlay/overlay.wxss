@@ -1,0 +1,45 @@
+.y-dialog-container {
+  position: fixed;
+  transform: translateY(-100%);
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 99;
+}
+.y-dialog-container .y-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation-duration: 0.3s !important;
+  transition: all 0.3s;
+  opacity: 0;
+  z-index: 9999;
+}
+.y-dialog-container .y-content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 0.3s;
+  transform: scale(0);
+  opacity: 0;
+  display: flex;
+  z-index: 99999;
+}
+.y-dialog-container.open,
+.y-dialog-container.destory {
+  transform: translateY(0%);
+}
+.y-dialog-container.open .y-mask {
+  opacity: 1;
+}
+.y-dialog-container.open .y-content {
+  opacity: 1;
+  transform: scale(1);
+}

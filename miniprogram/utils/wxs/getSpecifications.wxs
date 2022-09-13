@@ -1,0 +1,15 @@
+/**获取所有商品规格
+ * 
+ * @param data 
+ */
+module.exports = function (data) {
+  if (!data) {
+    return "";
+  }
+  var str = "";
+  for (var index = 0; index < data.length; index++) {
+    var item = data[index];
+    str += item.value + " ";
+  }
+  return str.trim();
+}

@@ -1,0 +1,18 @@
+<view class="custom-image" style="width: {{width}}rpx;">
+  <block wx:if="{{imagesInfo.length>1}}">
+    <swiper style="height:{{swiperHeight}}rpx;" indicator-dots="{{true}}" circular="{{true}}">
+      <block wx:for="{{imagesInfo}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item.pictureUrl}}" mode="widthFix" bindload="getSwiperHeight" bindtap="onTapImage" data-item="{{item}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </block>
+  <block wx:else>
+    <image class="class" style="{{customStyle}}" mode="{{mode}}" src="{{src}}" lazy-load="{{lazyLoad}}" bindtap="onTapImage"></image>
+  </block>
+  <block wx:if="{{hotZonePosition.length}}" wx:for="{{hotZonePosition}}" wx:key="index">
+    <view class="hot-view" style="width:{{item.width}}rpx;height:{{item.height}}rpx;left:{{item.x}}rpx;top:{{item.y}}rpx;" catchtap="onTapHot" data-item="{{item}}">
+    </view>
+  </block>
+</view>

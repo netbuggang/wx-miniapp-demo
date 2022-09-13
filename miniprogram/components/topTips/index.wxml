@@ -1,0 +1,8 @@
+<view wx:if="{{SHOW_TOP}}" class="box" style="top:{{top}}px;" bindtap="okHandler">
+  <view class="arrow" style="margin-right:{{marRight}}px;"></view>
+  <view class="body">
+    <image class="img-content" src="https://remymartin-crm.s3.cn-northwest-1.amazonaws.com.cn/prod/remy_topTips.png"></image>
+    <!-- <view class="text-content">{{text}}</view>
+    <view class="cancle-btn" bindtap="okHandler"></view> -->
+  </view>
+</view>

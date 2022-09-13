@@ -1,0 +1,6 @@
+<view class="y-dialog-container {{status}}" catchtouchmove="preventTouchMove">
+  <view wx:if="showMask" class="y-mask" style="{{maskCustomStyle}}"></view>
+  <view class="y-content">
+    <slot></slot>
+  </view>
+</view>

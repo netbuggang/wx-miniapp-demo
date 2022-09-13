@@ -1,0 +1,138 @@
+// 通用提示弹窗
+.plain-overlay-container {
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  .plain-overlay-wrap {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 648rpx;
+    min-height: 548rpx;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10rpx;
+    background-color: rgb(247, 247, 247);
+    padding: 40rpx 52rpx;
+  }
+
+  .plain-header {
+    display: flex;
+    margin-top: 88rpx;
+    margin-bottom: 40rpx;
+    flex-direction: column;
+    align-items: center;
+
+    .points-image-wrap {
+      width: 72rpx;
+      height: 72rpx;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      position: relative;
+
+      &.fail {
+        background-image: url("https://remymartin-crm.s3.cn-northwest-1.amazonaws.com.cn/prod/gtr_dialog_icon_fail.png");
+      }
+
+      &.success {
+        background-image: url("https://remymartin-crm.s3.cn-northwest-1.amazonaws.com.cn/prod/gtr_dialog_icon_success.png");
+      }
+
+      &.info {
+        background-image: url("https://remymartin-crm.s3.cn-northwest-1.amazonaws.com.cn/prod/remy_dialog_icon_info.png");
+      }
+
+      &.wait {
+        background-image: url("https://remymartin-crm.s3.cn-northwest-1.amazonaws.com.cn/prod/gtr_dialog_icon_wait.png");
+      }
+
+      &.miniapp {
+        background-image: url("https://remymartin-crm.s3.cn-northwest-1.amazonaws.com.cn/prod/gtr_dialog_icon_miniapp.png");
+      }
+    }
+  }
+
+  .plain-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 32rpx;
+
+    .content {
+      text-align: center;
+      word-break: break-all;
+      letter-spacing: 2rpx;
+      color: #ccab82;
+      line-height: 2.25;
+      font-size: 38rpx;
+    }
+
+    // 提示语
+    .tips {
+      padding: 0 32rpx;
+      font-size: 24rpx;
+      color: #a62a08;
+      text-align: center;
+      word-break: break-all;
+      letter-spacing: 2rpx;
+      margin-top: 10rpx;
+      margin-bottom: 56rpx;
+    }
+  }
+
+  .plain-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40rpx;
+
+    .action {
+      box-sizing: border-box;
+      min-width: 244rpx;
+      height: 64rpx;
+      line-height: 64rpx;
+      text-align: center;
+      padding: 0 24rpx;
+      border-radius: 64rpx;
+      font-size: 28rpx;
+      letter-spacing: 4rpx;
+
+      &.close {
+        background-color: #f7f7f7;
+        color: #000000;
+        border: 2rpx solid #000000;
+      }
+
+      &.submit {
+        background-color: #ccab82;
+        color: #ffffff;
+        border: 2rpx solid #ccab82;
+      }
+
+      &+.action {
+        margin-left: 48rpx;
+      }
+    }
+  }
+
+  // 关闭按钮
+  .plain-overlay-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80rpx;
+    height: 80rpx;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABcSAAAXEgFnn9JSAAAAuUlEQVQ4jaXUMQoCMRCF4V+tZIv1CIqdN1BPpp0XsfQYgnZaWXgAQS/ggvVamMGwLMnM5HWThI9JBgK/TChLBYykmAIPYOPEauAC7AVdAm+gdaCCtcAZGMvG2oF2sap7wIJmMQuqxjSoGUuhNXD1YH3orhSL0SZAKmyYAe/AK6qPwMfbXfxmN/6dbksxuWb8piY0NU0zGmMn+gegRjWYGrVgWdSDJdE58HRgklVAD8BAFmdOTLIg/NZfVOlYLem1MwsAAAAASUVORK5CYII=);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20rpx 20rpx;
+  }
+}
+
+// flex居中
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

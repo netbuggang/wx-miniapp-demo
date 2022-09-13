@@ -1,0 +1,8 @@
+/**判断文件链接类型
+ * 
+ * @param path 
+ * @param type 
+ */
+module.exports = function (path, type) {
+  return path.split(".")[path.split(".").length - 1] === type;
+}

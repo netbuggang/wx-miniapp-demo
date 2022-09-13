@@ -1,0 +1,15 @@
+.custom-image {
+  position: relative;
+  height: max-content;
+}
+
+.custom-image image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.custom-image>.hot-view {
+  position: absolute;
+  /* background-color: green; */
+}

@@ -1,0 +1,3 @@
+<view id="__my__video" class="video-component">
+  <video poster="{{poster}}" style="height:{{materialHeight}}rpx; {{style}}" src="{{src}}" loop="{{loop}}" autoplay="{{autoplay}}" controls="{{true}}" muted="{{true}}" show-mute-btn="{{true}}" object-fit="cover" play-btn-position="center" bindloadedmetadata="videoLoder"></video>
+</view>

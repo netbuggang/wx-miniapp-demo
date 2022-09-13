@@ -1,0 +1,17 @@
+/**获取拓展字段某个key的value
+ * 
+ * @param data 
+ * @param key 
+ * @param parse 是否序列化 
+ */
+module.exports = function (data, key, parse = false) {
+  if (!data) {
+    return "";
+  }
+  for (var index = 0; index < data.length; index++) {
+    var item = data[index];
+    if (item.code.toLocaleLowerCase() == key.toLocaleLowerCase()) {
+      return parse ? JSON.parse(item.value) : item.value;
+    }
+  }
+}

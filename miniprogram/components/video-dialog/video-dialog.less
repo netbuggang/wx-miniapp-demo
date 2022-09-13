@@ -1,0 +1,42 @@
+.plain-overlay-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  /* flex居中 */
+}
+.plain-overlay-container .flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.plain-overlay-container .img-width-100 {
+  width: 100% !important;
+  height: auto;
+  vertical-align: top;
+  vertical-align: text-top;
+  vertical-align: bottom;
+  vertical-align: text-bottom;
+}
+.plain-overlay-container .plain-overlay-wrap {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.plain-overlay-container .plain-overlay-close {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAC4UlEQVR4Xu2ZuaoUQRSGv/MIJj6Fb+ATCKYuqLgjLogL4oKIC3JVxAVXxB0VRQwMBAPBQPCCgSC4BYKBYCAaXBAMBPmloRqKYe7cubdO9UzT1dHQU9v/1X/O6a42On5Zx/VTABQHdJxACYGOG6AkwRICJQQ6TqCEQMcNUKpACYESAh0n4BICkhYDF4HXwISZfcrFVdIFYDtw1MyOpM7jBeAxsCQs5iOwNAcESQ+B5WGeKTObNy4Aqh2pdqa+3CFIug+sjOaYNLOFYwGgWoSk2AXVLTcIku4Aa3IAdgmBemE5IEi6CazPIb4a0xWAtxMkXQM25RKfBYAXBElXgC05xWcDkAohKnXZkmo9sHsIxFl5LjlB0jlgZ+6dbwTAbJ0g6TSwpynxWUNgtk6QdBLY16T4xgDM5ARJx4GDTYtvFMAACE+Aw6MQ3ziAaSDE0eL29BgPOuh31iow3cR9qkPVtHHxI3FAcMEjYFkPoM/hLfLDsLvn0a5xB0h6AKyYZvFfAoR3HuKGGaNRAJLuAqt7El5vEvwaILwdRkBqm8YASLoFrOuX7fuUwW8BwptUgTP1bwSApOvAxkGlTtIJYH/U5nuAMDmTiJT/swOQdBXYPEyd7/Mo/CNAeJUicmRlUNIlYNsw4us2ks4Cu6I+v6qKYWYvc0DI5gBJ54EdsxEfQahPfutbU8EJL7whZAEg6Qywey7iIwiXga3RGL+DE557QnAHIOkUsDdFfASh90jsT4DwzAuCKwBJE8ABD/ERhBvAhmjMvwHCUw8IbgAkHQMOeYqPIPQei/+rPpCYWfUQlXS5AJBUHWFVR1n15f5iI+kesCqew8wWJKn3OhaXdBtYGxbjLj5yQvxp7KeZzR8XAIuA6hj7ffU0l+O7YJ/EOD4fR1N3YZT9XXLAKAWkzl0ApBJse//igLbvYOr6iwNSCba9f3FA23cwdf3FAakE296/OKDtO5i6/uKAVIJt7995B/wHSg9CUD72BBgAAAAASUVORK5CYII=);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80rpx 80rpx;
+}

@@ -1,0 +1,148 @@
+/* 基础页面容器样式 */
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #ffffff;
+  position: relative;
+  box-sizing: border-box;
+  border-top: 1px solid #eee;
+}
+
+/* 按钮点击放大 */
+@keyframes btn-scale-in {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.9);
+  }
+}
+
+.scale-btn {
+  transition: transform 0.3s;
+}
+
+.scale-btn:active {
+  transform: scale(0.95);
+}
+
+/* 按钮点击带灰色背景 */
+.action-btn:active {
+  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.1) inset;
+}
+
+/* 元素灰度 */
+.gray {
+  filter: grayscale(100%);
+}
+
+/* 元素灰度且屏蔽事件 */
+.events-none-gray {
+  filter: grayscale(100%);
+  pointer-events: none !important;
+}
+
+/* 单行文本超出显示省略号 */
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 2行文本超出显示省略号 */
+.ellipsis-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* 渐入动画 */
+.an-fade-in {
+  animation: fade-in 0.5s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* iphoneX底部安全区域适配 */
+.safe-area-inset-bottom {
+  padding-bottom: constant(safe-area-inset-bottom) !important;
+  /* 兼容 iOS < 11.2 */
+  padding-bottom: env(safe-area-inset-bottom) !important;
+  /* 兼容 iOS >= 11.2 */
+}
+
+/* flex居中 */
+.flex-center {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-center-column {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 隐藏边框 */
+.border-none {
+  border: none !important;
+}
+
+/* 元素禁止点击事件 */
+.events-none {
+  pointer-events: none !important;
+}
+
+/* 英文自动换行 */
+.break-word {
+  word-wrap: break-word !important;
+}
+
+/* 英文强制换行 */
+.break-all {
+  word-break: break-all !important;
+}
+
+.img-width-100 {
+  width: 100% !important;
+  height: auto;
+  vertical-align: top;
+  vertical-align: text-top;
+  vertical-align: bottom;
+  vertical-align: text-bottom;
+  font-size: 0;
+}
+
+.img-btn-wrap {
+  width: unset !important;
+  background: unset !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.my-btn {
+  background: unset !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.my-btn::after {
+  border: none;
+}
