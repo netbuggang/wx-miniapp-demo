@@ -1,0 +1,51 @@
+.index-container {
+  margin: auto;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+
+  &::before,
+  &::after {
+    content: "";
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background: conic-gradient(from 135deg,
+        transparent,
+        transparent 0.25turn,
+        #03a9f4 0.27turn,
+        #03a9f4 0.98turn,
+        transparent 1turn);
+    transform: scale(.98);
+    -webkit-mask: radial-gradient(transparent 145px px, #000 145.5px, #000);
+    mask: radial-gradient(transparent 145px, #000 145.5px, #000);
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 6px);
+    width: 12px;
+    height: 150px;
+    background: radial-gradient(circle at center 6px, deeppink, deeppink 6px, transparent 6px, transparent);
+    transform-origin: bottom center;
+    animation: rotate 10s infinite alternate;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(130deg);
+  }
+
+  100% {
+    transform: rotate(-130deg);
+  }
+}

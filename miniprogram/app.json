@@ -25,7 +25,8 @@
       "root": "exercise",
       "pages": [
         "pages/specs/index",
-        "pages/demo/index"
+        "pages/demo/index",
+        "pages/ruler/index"
       ]
     }
   ],
