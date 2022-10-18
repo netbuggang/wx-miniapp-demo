@@ -188,7 +188,7 @@ export function CacheHTTPResult(httpPromise, needRefresh) {
   let cache = undefined;
   return function (...args) {
     // 最后一个参数是刷新的功能
-    if (needRefresh && args[args.length - 1] == true) {
+    if (needRefresh && args[args.length - 1] === true) {
       cache = undefined;
     }
 

@@ -11,8 +11,9 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-
+  async onLoad(options) {
+    var fn = function () { console.log(1111) }
+    console.log(await fn());
   },
 
   /**

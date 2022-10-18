@@ -25,6 +25,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "exercise/pages/cacheHTTPResult/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

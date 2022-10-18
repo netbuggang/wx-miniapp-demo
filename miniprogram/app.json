@@ -26,7 +26,8 @@
       "pages": [
         "pages/specs/index",
         "pages/demo/index",
-        "pages/ruler/index"
+        "pages/ruler/index",
+        "pages/cacheHTTPResult/index"
       ]
     }
   ],
