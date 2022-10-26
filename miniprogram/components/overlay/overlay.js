@@ -12,17 +12,21 @@ Component({
     }
   },
   data: {
-    status: "hiden"
+    status: "hide"
   },
   methods: {
     open() {
       this.setData({ status: "open" });
     },
-    close() {
-      this.setData({ status: "destory" });
-      setTimeout(() => {
+    close(config = { animation: true }) {
+      if (config.animation) {
+        this.setData({ status: "destory" });
+        setTimeout(() => {
+          this.setData({ status: "hide" });
+        }, 350);
+      } else {
         this.setData({ status: "hide" });
-      }, 350);
+      }
     },
     preventTouchMove(e) { }
   }
