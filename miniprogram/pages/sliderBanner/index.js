@@ -1,3 +1,4 @@
+import { Throttle, Debounce } from "../../utils/util";
 Page({
   data: {
     showZoom: true,
@@ -11,18 +12,18 @@ Page({
   onTap() {
     // this.setData({ showZoom: !this.data.showZoom })
   },
-  onMove(e) {
+  onMove: Throttle(function (e) {
     console.log(1111, e);
     this.setData({ showZoom: false })
-  },
+  }),
   onScrollToupper(e) {
     console.log("bindscrolltoupper: ", e)
     this.setData({ showZoom: true })
   },
-  onTransitionEnd(e) {
+  onTransitionEnd: Debounce(function (e) {
     console.log(22222, e);
     this.setData({ openScroll: !this.data.openScroll })
-  },
+  }),
   randomColor() {
     let bg = "#";
     for (let i = 0; i < 6; i++) {
