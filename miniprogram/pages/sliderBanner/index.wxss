@@ -1,19 +1,25 @@
+page {
+  /* --width: 750rpx;
+  --height: 1178rpx;
+  --ratio: 1.25; */
+}
+
 .scroll-view {
   width: 100vw;
   height: 100vh;
 }
 
 .banner {
-  width: 750rpx;
-  height: 1178rpx;
+  width: var(--width);
+  height: var(--height);
   transition: all 0.5s ease-in-out;
   transform-origin: 50% 0;
 }
 
 .banner.zoom {
-  width: 936rpx;
-  transform: translateX(-93rpx);
-  height: 1540rpx;
+  width: calc(var(--width) * var(--ratio));
+  height: calc(var(--height) * var(--ratio));
+  transform: translateX(calc((var(--width) * var(--ratio) - var(--width)) / -2));
 }
 
 swiper,

@@ -1,5 +1,5 @@
 <scroll-view class="scroll-view" scroll-y="{{openScroll}}" enhanced="{{true}}" bindscrolltoupper="onScrollToupper" throttle="{{false}}" upper-threshold="{{1}}">
-  <view class="banner {{showZoom?'zoom':''}}" bindtap="onTap" bindtouchmove="{{showZoom?'onMove':''}}" bindtransitionend="onTransitionEnd">
+  <view class="banner {{showZoom?'zoom':''}}" style="--width: {{750}}rpx;--height: {{1178}}rpx;--ratio: {{1.25}}" bindtap="onTap" bindtouchmove="{{showZoom?'onMove':''}}" bindtransitionend="onTransitionEnd">
     <swiper autoplay="{{true}}" circular="{{true}}">
       <swiper-item>
         <image src="https://s1.ax1x.com/2022/11/09/zSkWv9.jpg" />
