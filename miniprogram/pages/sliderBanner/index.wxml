@@ -1,13 +1,20 @@
-<view>
-  <view class="banner {{showZoom?'zoom':''}}" bindtap="onTap">
-    <image src="https://s1.ax1x.com/2022/11/09/zSkWv9.jpg" />
+<scroll-view class="scroll-view" scroll-y="{{openScroll}}" enhanced="{{true}}" bindscrolltoupper="onScrollToupper" throttle="{{false}}" upper-threshold="{{1}}">
+  <view class="banner {{showZoom?'zoom':''}}" bindtap="onTap" bindtouchmove="{{showZoom?'onMove':''}}" bindtransitionend="onTransitionEnd">
+    <swiper autoplay="{{true}}" circular="{{true}}">
+      <swiper-item>
+        <image src="https://s1.ax1x.com/2022/11/09/zSkWv9.jpg" />
+      </swiper-item>
+      <swiper-item>
+        <image src="https://s1.ax1x.com/2022/11/09/zSkWv9.jpg" />
+      </swiper-item>
+    </swiper>
   </view>
   <view class="main">
     <view wx:for="{{20}}" wx:key="index" class="box" style="background-color: {{randomColor()}};">
       <text>第{{index+1}}行</text>
     </view>
   </view>
-</view>
+</scroll-view>
 <!-- wxs -->
 <wxs module="randomColor">
   module.exports = function (path, type) {

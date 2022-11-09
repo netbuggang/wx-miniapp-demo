@@ -1,6 +1,7 @@
 Page({
   data: {
-    showZoom: true
+    showZoom: true,
+    openScroll: false,
   },
   onLoad(options) {
 
@@ -8,7 +9,19 @@ Page({
   onReady() {
   },
   onTap() {
-    this.setData({ showZoom: !this.data.showZoom })
+    // this.setData({ showZoom: !this.data.showZoom })
+  },
+  onMove(e) {
+    console.log(1111, e);
+    this.setData({ showZoom: false })
+  },
+  onScrollToupper(e) {
+    console.log("bindscrolltoupper: ", e)
+    this.setData({ showZoom: true })
+  },
+  onTransitionEnd(e) {
+    console.log(22222, e);
+    this.setData({ openScroll: !this.data.openScroll })
   },
   randomColor() {
     let bg = "#";
@@ -16,15 +29,6 @@ Page({
       bg += Math.floor(Math.random() * 16).toString(16);
     }
     return bg;
-  },
-  onPageScroll(e) {
-    const { scrollTop } = e;
-    if (scrollTop > 1 && this.data.showZoom) {
-      this.setData({ showZoom: false })
-    }
-    if (scrollTop < 1 && !this.data.showZoom) {
-      this.setData({ showZoom: true })
-    }
   },
   onShareAppMessage() {
 
