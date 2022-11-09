@@ -1,0 +1,20 @@
+<view>
+  <view class="banner {{showZoom?'zoom':''}}" bindtap="onTap">
+    <image src="https://s1.ax1x.com/2022/11/09/zSkWv9.jpg" />
+  </view>
+  <view class="main">
+    <view wx:for="{{20}}" wx:key="index" class="box" style="background-color: {{randomColor()}};">
+      <text>第{{index+1}}行</text>
+    </view>
+  </view>
+</view>
+<!-- wxs -->
+<wxs module="randomColor">
+  module.exports = function (path, type) {
+    var bg = "#";
+    for (var i = 0; i < 6; i++) {
+      bg += Math.floor(Math.random() * 16).toString(16);
+    }
+    return bg;
+  }
+</wxs>

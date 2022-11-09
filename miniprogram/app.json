@@ -11,7 +11,8 @@
     "pages/updateRecordResult/index",
     "pages/updateRecordSuccess/index",
     "pages/sumRecord/index",
-    "pages/sumRecordResult/index"
+    "pages/sumRecordResult/index",
+    "pages/sliderBanner/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -20,17 +21,26 @@
     "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "black"
   },
-  "subpackages": [
-    {
-      "root": "exercise",
-      "pages": [
-        "pages/specs/index",
-        "pages/demo/index",
-        "pages/ruler/index",
-        "pages/cacheHTTPResult/index"
-      ]
-    }
-  ],
+  "subpackages": [{
+    "root": "exercise",
+    "pages": [
+      "pages/specs/index",
+      "pages/demo/index",
+      "pages/ruler/index",
+      "pages/cacheHTTPResult/index"
+    ]
+  }],
+  "tabBar": {
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/sliderBanner/index",
+        "text": "测试"
+      }
+    ]
+  },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
 }

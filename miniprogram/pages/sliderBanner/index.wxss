@@ -1,0 +1,25 @@
+.banner {
+  width: 750rpx;
+  height: 1178rpx;
+  transition: all 0.5s ease-in-out;
+}
+
+.banner.zoom {
+  width: 936rpx;
+  transform: translateX(-93rpx);
+  transform: scale();
+  height: 1468rpx;
+}
+
+.banner>image {
+  width: 100%;
+  height: 100%;
+}
+
+.box {
+  height: 200rpx;
+  font-size: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
