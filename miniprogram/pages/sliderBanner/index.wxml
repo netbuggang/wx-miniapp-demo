@@ -1,4 +1,4 @@
-<scroll-view class="scroll-view" scroll-y="{{openScroll}}" enhanced="{{true}}" bindscrolltoupper="onScrollToupper" throttle="{{false}}" upper-threshold="{{1}}">
+<scroll-view class="scroll-view" scroll-y="{{!disableScroll}}" enhanced="{{true}}" bindscrolltoupper="onScrollToupper" throttle="{{false}}" upper-threshold="{{1}}">
   <view class="banner {{onReady?'ready':''}} {{showZoom?'zoom':''}}" style="--width: {{750}}rpx;--height: {{windowInfo.initialHeight}}rpx;--ratio: {{windowInfo.pixelRatio}}" bindtouchmove="{{showZoom?'onMove':''}}">
     <swiper autoplay="{{true}}" circular="{{true}}">
       <swiper-item>

@@ -2,7 +2,7 @@ import { Throttle, PxToRpx } from "../../utils/util";
 Page({
   data: {
     showZoom: true,
-    openScroll: false,
+    disableScroll: true,
     windowInfo: {
       initialHeight: 1178
     },
@@ -22,13 +22,13 @@ Page({
   onMove: Throttle(function (e) {
     console.log(1111, e);
     this.setData({ showZoom: false }, () => {
-      this.setData({ openScroll: true })
+      this.setData({ disableScroll: false })
     })
   }),
   onScrollToupper(e) {
     console.log("bindscrolltoupper: ", e)
     this.setData({ showZoom: true }, () => {
-      this.setData({ openScroll: false })
+      this.setData({ disableScroll: true })
     })
   },
   randomColor() {
