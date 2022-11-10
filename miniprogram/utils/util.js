@@ -218,3 +218,25 @@ export function ScrollToElement(ele, duration = 300) {
     }
   });
 }
+
+/**px转rpx
+ * 
+ * @param {*} px 
+ */
+export function PxToRpx(px) {
+  const { windowWidth } = wx.getSystemInfoSync();
+  const onePxToRpx = 750 / windowWidth;
+  const rpx = px * onePxToRpx;
+  return rpx;
+}
+
+/**rpx转px
+ * 
+ * @param {*} rpx 
+ */
+export function RpxToPx(rpx) {
+  const { windowWidth } = wx.getSystemInfoSync();
+  const onePxToRpx = 750 / windowWidth;
+  const px = rpx / onePxToRpx;
+  return px;
+}

@@ -12,8 +12,12 @@ page {
 .banner {
   width: var(--width);
   height: var(--height);
-  transition: all 0.5s ease-in-out;
+  transition: all 0 ease-in-out;
   transform-origin: 50% 0;
+}
+
+.banner.ready {
+  transition-duration: 0.5s
 }
 
 .banner.zoom {

@@ -1,29 +1,36 @@
-import { Throttle, Debounce } from "../../utils/util";
+import { Throttle, PxToRpx } from "../../utils/util";
 Page({
   data: {
     showZoom: true,
     openScroll: false,
+    windowInfo: {
+      initialHeight: 1178
+    },
+    onReady: false
   },
   onLoad(options) {
+    const { windowInfo: { initialHeight } } = this.data;
+    const { windowHeight } = wx.getSystemInfoSync();
 
+    this.setData({
+      "windowInfo.pixelRatio": PxToRpx(windowHeight) / initialHeight
+    }, () => {
+      this.setData({ onReady: true })
+    })
   },
-  onReady() {
-  },
-  onTap() {
-    // this.setData({ showZoom: !this.data.showZoom })
-  },
+  onReady() { },
   onMove: Throttle(function (e) {
     console.log(1111, e);
-    this.setData({ showZoom: false })
+    this.setData({ showZoom: false }, () => {
+      this.setData({ openScroll: true })
+    })
   }),
   onScrollToupper(e) {
     console.log("bindscrolltoupper: ", e)
-    this.setData({ showZoom: true })
+    this.setData({ showZoom: true }, () => {
+      this.setData({ openScroll: false })
+    })
   },
-  onTransitionEnd: Debounce(function (e) {
-    console.log(22222, e);
-    this.setData({ openScroll: !this.data.openScroll })
-  }),
   randomColor() {
     let bg = "#";
     for (let i = 0; i < 6; i++) {
@@ -31,7 +38,5 @@ Page({
     }
     return bg;
   },
-  onShareAppMessage() {
-
-  }
+  onShareAppMessage() { }
 })
