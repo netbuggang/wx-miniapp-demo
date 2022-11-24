@@ -12,7 +12,7 @@ page {
 .banner {
   width: var(--width);
   height: var(--height);
-  transition: all 0 ease-in-out;
+  transition: height 0 ease-in-out;
   transform-origin: 50% 0;
 }
 

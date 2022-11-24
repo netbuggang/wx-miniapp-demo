@@ -21,17 +21,21 @@
     "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "black"
   },
-  "subpackages": [{
-    "root": "exercise",
-    "pages": [
-      "pages/specs/index",
-      "pages/demo/index",
-      "pages/ruler/index",
-      "pages/cacheHTTPResult/index"
-    ]
-  }],
+  "subpackages": [
+    {
+      "root": "exercise",
+      "pages": [
+        "pages/specs/index",
+        "pages/demo/index",
+        "pages/ruler/index",
+        "pages/cacheHTTPResult/index",
+        "pages/scrollView/index"
+      ]
+    }
+  ],
   "tabBar": {
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "text": "首页"
       },

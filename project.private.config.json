@@ -39,6 +39,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "exercise/pages/scrollView/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
