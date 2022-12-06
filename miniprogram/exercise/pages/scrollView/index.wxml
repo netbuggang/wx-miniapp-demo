@@ -6,10 +6,11 @@
       </view>
       <view class="page-section-spacing">
         <scroll-view class="scroll-view_H" scroll-left="{{offsetX}}" style="width: 100%">
-          <view id="scroll-wrap" class="scroll-wrap" style="transform: translateX(-{{300}}rpx);" catchtouchstart="{{moveHandler.touchstart}}" catchtouchmove="{{moveHandler.touchmove}}" catchtouchend="{{moveHandler.touchend}}">
+          <view id="scroll-wrap" class="scroll-wrap" style="transform: translateX(-{{currIndex*750}}rpx);" catchtouchstart="{{moveHandler.touchstart}}" catchtouchmove="{{moveHandler.touchmove}}" catchtouchend="{{moveHandler.touchend}}">
             <view id="demo1" class="scroll-view-item_H demo-text-1"></view>
             <view id="demo2" class="scroll-view-item_H demo-text-2"></view>
             <view id="demo3" class="scroll-view-item_H demo-text-3"></view>
+            <view id="demo1" class="scroll-view-item_H demo-text-1"></view>
           </view>
         </scroll-view>
       </view>

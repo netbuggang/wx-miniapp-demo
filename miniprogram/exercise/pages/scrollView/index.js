@@ -5,6 +5,8 @@ Page({
     toView: 'green',
     offsetX: 0,
     scrollWidth: 0,
+    currIndex: 0,
+    images: ["", "", ""]
   },
   onReady() {
     wx.createSelectorQuery().select(".scroll-wrap").boundingClientRect((rect) => {
@@ -14,7 +16,19 @@ Page({
     }).exec()
   },
   changeDirection(e) {
-    console.log(11111, e);
+    // console.log(11111, e);
+    const { direction } = e;
+    const { currIndex, images } = this.data;
+    let nextIndex = currIndex;
+    if (direction == 3) {
+      nextIndex = nextIndex < images.length ? nextIndex + 1 : 0;
+    } else {
+      nextIndex = nextIndex <= 0 ? images.length : nextIndex - 1;
+    }
+    this.setData({
+      currIndex: nextIndex
+    })
+    console.log(111111, this.data.currIndex);
   },
   updateOffsetX(e) {
     this.setData({

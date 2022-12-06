@@ -10,6 +10,7 @@
   width: max-content;
   height: max-content;
   display: flex;
+  transition: transform 0.3s;
 }
 
 .scroll-view-item {

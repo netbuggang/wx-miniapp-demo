@@ -4,9 +4,7 @@
       <block wx:for="{{yxxruiSliderData.datas}}" wx:for-index="i">
         <view class="slider-item" style="padding-left:{{yxxruiSliderData.blankWidth}}px;">
           <form class="slider-form" bindsubmit="" report-submit="true" data-posttype="" data-posturl="" data-appId="">
-            <button>
-              <image class="slider-img" src="{{item}}" />
-            </button>
+            <image class="slider-img" src="{{item}}" />
           </form>
         </view>
       </block>
