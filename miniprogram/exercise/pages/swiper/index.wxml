@@ -1,19 +1,11 @@
-<view class='yxxrui-slider'>
+<view class='y-slider'>
   <view style='overflow:hidden;'>
-    <view bindtouchcancel="sliderTouchCancel" bindtouchstart='sliderTouchStart' bindtouchend='sliderTouchEnd' bindtouchmove='sliderTouchMove' style='width:{{yxxruiSliderData.totalWidth}}px;display:flex;transform:translate({{yxxruiSliderX}}px,0)'>
-      <block wx:for="{{yxxruiSliderData.datas}}" wx:for-index="i">
-        <view class="slider-item" style="padding-left:{{yxxruiSliderData.blankWidth}}px;">
-          <form class="slider-form" bindsubmit="" report-submit="true" data-posttype="" data-posturl="" data-appId="">
-            <image class="slider-img" src="{{item}}" />
-          </form>
+    <view bindtouchcancel="sliderTouchCancel" bindtouchstart='sliderTouchStart' bindtouchend='sliderTouchEnd' bindtouchmove='sliderTouchMove' style='width:{{ySliderData.totalWidth}}px;display:flex;transform:translate({{ySliderX}}px,0)'>
+      <block wx:for="{{ySliderData.datas}}" wx:for-index="i">
+        <view class="slider-item" style="padding-left:{{ySliderData.blankWidth}}px;">
+          <image class="slider-img" src="{{item}}" />
         </view>
       </block>
     </view>
-  </view>
-  <view class="slider-indicate-dots">
-    <block wx:for="{{yxxruiSliderData.indicateDots}}" wx:for-index="i">
-      <view class="slider-indicate-dot {{i==yxxruiSliderCurPage-1?'active':''}}">
-      </view>
-    </block>
   </view>
 </view>

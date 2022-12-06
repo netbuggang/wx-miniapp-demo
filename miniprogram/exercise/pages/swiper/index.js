@@ -1,17 +1,7 @@
-var myslider = require('./utils/yxxrui.slider.js');
-//index.js
-//获取应用实例
-const app = getApp();
+var myslider = require('./utils/y.slider');
 Page({
-  data: {
-    indicatorDots: false,
-    autoplay: false,
-    interval: 5000,
-    duration: 1000,
-    curPage: 1,
-    x: 0
-  },
-  onLoad: function () {
+  data: {},
+  onLoad() {
     myslider.initMySlider({
       that: this,
       datas: [
@@ -21,17 +11,11 @@ Page({
         './img/4.jpg'
       ],
       autoRun: true,
-      blankWidth: 12,
+      blankWidth: 0,
       newImgWidth: 18,
-      interval: 3000,
-      duration: 500,
+      interval: 10,
+      duration: 0,
       direction: 'left',
-      startSlide: function (curPage) {
-
-      },
-      endSlide: function (curPage) {
-
-      }
     });
   }
 })
