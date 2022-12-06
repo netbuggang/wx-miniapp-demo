@@ -1,0 +1,32 @@
+.series {
+  overflow: hidden;
+}
+
+.images {
+  min-width: 100%;
+}
+
+.row {
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.row:last-child {
+  transform: translateX(-100rpx);
+}
+
+image {
+  width: 180rpx;
+  height: 180rpx;
+  margin: 0 10rpx 8rpx 0;
+}
+
+@keyframes scroll-animation {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

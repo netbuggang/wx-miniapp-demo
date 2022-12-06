@@ -1,0 +1,8 @@
+<view class="series">
+  <view style="animation: {{duration}}ms scroll-animation linear infinite;width: {{seriesWidth*2}}rpx" class="images">
+    <view class="row" wx:for="{{productSeries}}" wx:key="{{index}}">
+      <image wx:for="{{item}}" wx:for-item="img" wx:for-index="imgIndex" wx:key="{{img + imgIndex}}" src="{{img}}"></image>
+      <image wx:for="{{item}}" wx:for-item="img" wx:for-index="imgIndex" wx:key="{{img + imgIndex}}-extra" src="{{img}}"></image>
+    </view>
+  </view>
+</view>

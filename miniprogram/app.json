@@ -29,7 +29,9 @@
         "pages/demo/index",
         "pages/ruler/index",
         "pages/cacheHTTPResult/index",
-        "pages/scrollView/index"
+        "pages/scrollView/index",
+        "pages/gallery/index",
+        "pages/swiper/index"
       ]
     }
   ],

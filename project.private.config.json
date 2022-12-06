@@ -46,6 +46,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "exercise/pages/gallery/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "exercise/pages/swiper/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
