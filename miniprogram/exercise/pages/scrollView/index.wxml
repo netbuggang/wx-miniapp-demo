@@ -2,6 +2,20 @@
   <view class="page-body">
     <view class="page-section">
       <view class="page-section-title">
+        <text>Horizontal Scroll\n横向自动滚动</text>
+      </view>
+      <view class="page-section-spacing">
+        <scroll-view class="scroll-view_H" scroll-left="{{offsetX}}" style="width: 100%">
+          <view id="scroll-wrap" class="scroll-wrap" style="transform: translateX(-{{300}}rpx);" catchtouchstart="{{moveHandler.touchstart}}" catchtouchmove="{{moveHandler.touchmove}}" catchtouchend="{{moveHandler.touchend}}">
+            <view id="demo1" class="scroll-view-item_H demo-text-1"></view>
+            <view id="demo2" class="scroll-view-item_H demo-text-2"></view>
+            <view id="demo3" class="scroll-view-item_H demo-text-3"></view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="page-section-title">
         <text>Vertical Scroll\n纵向滚动</text>
       </view>
       <view class="page-section-spacing">
@@ -26,8 +40,29 @@
         </scroll-view>
       </view>
     </view>
+    <view class="page-section">
+      <view class="page-section-title">
+        <text>测试父元素放大时，子元素不放大</text>
+      </view>
+      <view class="page-section-spacing">
+        <view class="test-section2">
+          <view class="child">剩余抽奖次数91次</view>
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="page-section-title">
+        <text>测试父元素放大时，子元素不放大</text>
+      </view>
+      <view class="page-section-spacing">
+        <button class="test-section">
+          <view class="child"></view>
+        </button>
+      </view>
+    </view>
   </view>
 </view>
+<wxs src="../../../utils/wxs/moveHandler.wxs" module="moveHandler" />
 <wxs module="test">
   var move = 0;
   module.exports = {

@@ -9,22 +9,14 @@ Page({
   onReady() {
     wx.createSelectorQuery().select(".scroll-wrap").boundingClientRect((rect) => {
       console.info("boundingClientRect.rect: ", rect)
-      this.setData({ scrollWidth: rect.width })
+      // 开启滚动
+      // this.setData({ scrollWidth: rect.width })
     }).exec()
-
-    // let move;
-    // let timer = requestAnimationFrame(function fn() {
-    //   move = parseInt(getComputedStyle(box).left);
-    //   if (move < 800) {
-    //     box.style.left = move + 8;
-    //     requestAnimationFrame(fn);
-    //   } else {
-    //     cancelAnimationFrame(timer);
-    //   }
-    // });
+  },
+  changeDirection(e) {
+    console.log(11111, e);
   },
   updateOffsetX(e) {
-    console.log(2222, e);
     this.setData({
       offsetX: e
     })
