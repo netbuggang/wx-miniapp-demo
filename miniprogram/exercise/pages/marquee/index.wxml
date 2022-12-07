@@ -1,0 +1,10 @@
+<view>
+  <view class="ul" style="transform:translateX({{offsetX}}px)" bindtouchcancel="sliderTouchCancel" bindtouchstart="sliderTouchStart" bindtouchend="sliderTouchEnd" bindtouchmove="sliderTouchMove">
+    <block wx:for="{{list}}" wx:key="index">
+      <image style="width: 234px;" src="{{item}}" mode="widthFix" />
+    </block>
+    <block wx:for="{{list}}" wx:key="item">
+      <image style="width: 234px;" src="{{item}}" mode="widthFix" />
+    </block>
+  </view>
+</view>

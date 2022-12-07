@@ -31,7 +31,8 @@
         "pages/cacheHTTPResult/index",
         "pages/scrollView/index",
         "pages/gallery/index",
-        "pages/swiper/index"
+        "pages/swiper/index",
+        "pages/marquee/index"
       ]
     }
   ],

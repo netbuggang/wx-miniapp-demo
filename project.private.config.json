@@ -60,6 +60,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "exercise/pages/marquee/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
