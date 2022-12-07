@@ -1,4 +1,4 @@
-var myslider = require('./utils/y.slider');
+import myslider from './utils/y.slider'
 Page({
   data: {},
   onLoad() {
@@ -10,9 +10,9 @@ Page({
         './img/3.jpg',
         './img/4.jpg'
       ],
-      autoRun: true,
+      autoRun: false,
       blankWidth: 0,
-      newImgWidth: 18,
+      newImgWidth: 0,
       interval: 10,
       duration: 0,
       direction: 'left',

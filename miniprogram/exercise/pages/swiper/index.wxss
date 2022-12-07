@@ -6,7 +6,7 @@
 .y-slider .slider-item {
   position: relative;
   display: inline-block;
-  width: 100%;
+  width: 300px;
   box-sizing: border-box;
   overflow: hidden;
   line-height: 0;

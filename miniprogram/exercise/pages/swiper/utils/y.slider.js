@@ -1,24 +1,3 @@
-//此处数据初始化后就不修改了
-// var ySliderData = {
-//   datas: [],//数据包，必须为数组
-//   indicateDots: [],
-//   blankWidth: 12,
-//   newImgWidth: 18,
-//   totalWidth:0,
-//   firstX:0,  
-//   direction:'left',
-//   autorun:true,
-//   duration:1000,
-//   interval:2000,
-// };
-//暂时记录一下，经常修改的参数
-// var ySliderX;//当前位移的x
-// var ySliderFirstPointX;//第一次触摸时的x坐标
-// var yAutoRunTimer=null;//自动滚动定时器
-// var ySlideTimer= null;//滚动一屏的定时器
-// var yCurPage=1;//当前页面
-// var ySliderLastX;//触摸屏幕时的位移x
-
 function initMySlider(opt) {
   if (opt.that == null) {
     console.log('请传入正确的this');
@@ -30,15 +9,13 @@ function initMySlider(opt) {
   //数据包，必须为数组
   ySliderData.datas = opt.datas || [];
   //空白处的宽度
-  ySliderData.blankWidth = opt.blankWidth == undefined ? 12 : opt.blankWidth;
+  ySliderData.blankWidth = opt.blankWidth ?? 12;
   //新图片凸出来的宽度
-  ySliderData.newImgWidth = opt.newImgWidth == undefined ? 18 : opt.newImgWidth;
+  ySliderData.newImgWidth = opt.newImgWidth ?? 18;
   //是否自动滚动
   ySliderData.autoRun = opt.autoRun;
   //每隔x毫秒滚动一次
-  ySliderData.interval = opt.interval ?? 3000;
-  //滚动一次需要x秒
-  ySliderData.duration = opt.duration ?? 200;
+  ySliderData.interval = opt.interval ?? 10;
   //滚动方向
   ySliderData.direction = opt.direction || 'left';
 
@@ -55,7 +32,7 @@ function initMySlider(opt) {
   ySliderData.datas.push(fistImg);//将第一张图片重复放到后边，做无缝滚动
 
   //计算各种参数
-  var w = wx.getSystemInfoSync().screenWidth;
+  var w = opt.imgWidth || wx.getSystemInfoSync().screenWidth;
   var kx = ySliderData.blankWidth;//白色空隙宽度12px
   var nx = ySliderData.newImgWidth;//新图片突出来18px
   var ox = kx + nx * 2;//每页中无效的宽度
@@ -69,18 +46,20 @@ function initMySlider(opt) {
     ySliderX: ySliderData.firstX,
   });
   dealEvent(that);
+
+  if (ySliderData.autoRun) {
+    autoRunMyslider(that, ySliderData.interval);
+  }
 }
 function dealEvent(that) {
   //触摸开始事件
   that.sliderTouchStart = function (opt) {
-    //让当前滚动暂定
-    that.data.ySlideTimer && clearInterval(that.data.ySlideTimer);
+    that.data.yTempTimer && clearTimeout(that.data.yTempTimer);
     //暂定自动滚动
     that.data.yAutoRunTimer && clearInterval(that.data.yAutoRunTimer);
     that.setData({
       ySliderLastX: that.data.ySliderX,
       ySliderFirstPointX: opt.touches[0].clientX,
-      ySlideTimer: null,
       yAutoRunTimer: null
     });
   };
@@ -99,10 +78,10 @@ function dealEvent(that) {
     //继续开启自动滚动
     var mydata = that.data.ySliderData;
     if (mydata.autoRun) {
-      var tempTimer = setTimeout(() => {
+      that.data.yTempTimer = setTimeout(() => {
         autoRunMyslider(that, mydata.interval);
-        clearTimeout(tempTimer);
-      }, 3000)
+        clearTimeout(that.data.yTempTimer);
+      }, 2000)
     }
   };
   //触摸取消事件跟触摸结束事件相同
@@ -126,9 +105,6 @@ function dealEvent(that) {
     oldShow && oldShow();
   }
 }
-/**
- * 自动开始滚动
- */
 function autoRunMyslider(that, t) {
   that.data.yAutoRunTimer && clearInterval(that.data.yAutoRunTimer);
   var autoRunTimer = setInterval(function () {
@@ -176,6 +152,6 @@ function slideTo(that, x) {
     });
   }
 }
-module.exports = {
-  initMySlider: initMySlider
-};
+export default {
+  initMySlider
+}
