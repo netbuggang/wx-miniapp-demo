@@ -1,4 +1,4 @@
-<view>
+<view catchtouchmove="{{canScroll ? '' : void }}">
   <view class="ul" style="transform:translateX({{offsetX}}px)" bindtouchcancel="sliderTouchCancel" bindtouchstart="sliderTouchStart" bindtouchend="sliderTouchEnd" bindtouchmove="sliderTouchMove">
     <block wx:for="{{list}}" wx:key="index">
       <image style="width: 234px;" src="{{item}}" mode="widthFix" />

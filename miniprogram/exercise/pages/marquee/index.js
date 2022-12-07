@@ -13,6 +13,7 @@ Page({
       "https://res-wxec-unipt.lorealchina.com/prod/lan/20221130/ac85445b-ab1e-4a89-b9f2-ad5795365e5f.jpg",
       "https://res-wxec-unipt.lorealchina.com/prod/lan/20221130/665e9fea-c977-44fc-afeb-f7a72677e16e.jpg"
     ],
+    canScroll: false,
     offsetX: 0,
     speed: -2,
     offsetWidth: 1872,
@@ -72,7 +73,7 @@ Page({
     const detalY = touch.pageY - this.startY * 1
     if (Math.abs(detalY) < 50) {
       //禁止上下滑动
-      // ownerInstance.callMethod('canScroll', false)
+      this.setData({ canScroll: false });
     }
 
     // 让轮播图跟着指头滑动
@@ -81,7 +82,7 @@ Page({
   },
   // 触摸结束事件
   sliderTouchEnd(e) {
-    // ownerInstance.callMethod('canScroll', true)
+    this.setData({ canScroll: true });
     if (this.touchEndClientX === 0 || this.touchStartClientX === 0) return;
 
     const dx = this.touchEndClientX - this.touchStartClientX;
