@@ -32,7 +32,8 @@
         "pages/scrollView/index",
         "pages/gallery/index",
         "pages/swiper/index",
-        "pages/marquee/index"
+        "pages/marquee/index",
+        "pages/marquee-wxs/index"
       ]
     }
   ],

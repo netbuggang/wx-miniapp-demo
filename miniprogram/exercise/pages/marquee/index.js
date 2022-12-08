@@ -38,12 +38,12 @@ Page({
     let _offsetX = moveX || offsetX;
 
     // 滚动到左边界，处理无缝滚动
-    if (_offsetX < -(offsetWidth / 2)) {
-      _offsetX = 0;
-    }
-    // 滚动到右边界，处理无缝滚动
     if (_offsetX > 0) {
       _offsetX = -(offsetWidth / 2);
+    }
+    // 滚动到右边界，处理无缝滚动
+    if (_offsetX < -(offsetWidth / 2)) {
+      _offsetX = 0;
     }
 
     this.setData({

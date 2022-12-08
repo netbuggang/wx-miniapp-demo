@@ -43,6 +43,16 @@
     </view>
     <view class="page-section">
       <view class="page-section-title">
+        <text>测试放大时，高度改变</text>
+      </view>
+      <view class="page-section-spacing">
+        <button class="scale-box">
+
+        </button>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="page-section-title">
         <text>测试父元素放大时，子元素不放大</text>
       </view>
       <view class="page-section-spacing">

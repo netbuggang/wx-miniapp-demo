@@ -1,0 +1,11 @@
+<view catchtouchmove="{{isCanScroll ? '' : void }}">
+  <view class="ul" bindtouchcancel="{{tools.touchend}}" bindtouchstart="{{tools.touchstart}}" bindtouchend="{{tools.touchend}}" bindtouchmove="{{tools.touchmove}}" change:scrollWidth="{{tools.scrollWidthObserver}}" scrollWidth="{{scrollWidth}}" data-speed="{{1}}">
+    <block wx:for="{{list}}" wx:key="index">
+      <image style="width: 234px;" src="{{item}}" mode="widthFix" />
+    </block>
+    <block wx:for="{{list}}" wx:key="item">
+      <image style="width: 234px;" src="{{item}}" mode="widthFix" />
+    </block>
+  </view>
+</view>
+<wxs src="./index.wxs" module="tools" />
