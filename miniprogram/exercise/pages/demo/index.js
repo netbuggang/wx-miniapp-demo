@@ -25,4 +25,9 @@ Page({
     const res = await Promise.all(list)
     console.log(11111, res);
   },
+  onTap() {
+    this.setData({
+      active: !this.data.active
+    })
+  }
 })

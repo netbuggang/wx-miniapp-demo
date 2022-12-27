@@ -1,2 +1,5 @@
-<!--exercise/pages/demo/index.wxml-->
-<text>exercise/pages/demo/index.wxml</text>
+<view class="wrap">
+  <view class="box {{active?'active':''}}" bindtap="onTap">
+
+  </view>
+</view>
