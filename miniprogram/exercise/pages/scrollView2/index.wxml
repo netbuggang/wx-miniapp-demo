@@ -1,4 +1,4 @@
-<scroll-view scroll-y="{{isScroll}}" style="height: 100vh;overflow-anchor: none;" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" binddragend="binddragend" bindanimationend="bindanimationend" bindtransitionend="bindtransitionend" scroll-anchoring="{{true}}" scroll-with-animation="{{true}}" enhanced="{{true}}">
+<scroll-view scroll-y="{{isScroll}}" style="height: 100vh;overflow-anchor: none;" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" binddragend="binddragend" bindanimationend="bindanimationend" bindtransitionend="bindtransitionend" scroll-anchoring="{{true}}" scroll-with-animation="{{true}}" enhanced="{{true}}" enable-passive="{{true}}" bounces="{{false}}" throttle="{{false}}">
   <view class="scroll-view-item" style="background-color: red;">A</view>
   <view class="scroll-view-item" style="background-color: yellowgreen;">B</view>
   <view class="scroll-view-item" style="background-color: burlywood;">C</view>
