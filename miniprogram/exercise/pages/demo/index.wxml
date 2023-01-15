@@ -2,4 +2,11 @@
   <view class="box {{active?'active':''}}" bindtap="onTap">
 
   </view>
+  <view class="box2">
+
+  </view>
 </view>
+<view>
+  <text user-select>这是一行带user-select的文本</text>
+</view>
+<input class="input" placeholder-class="placeholder" placeholder="请输入您的姓名" name="name" value="{{form.name}}" />

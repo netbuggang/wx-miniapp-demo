@@ -1,19 +1,31 @@
 .wrap {
-  position: relative;
+  margin: 200px auto;
+  /* transform: scale(1); */
   width: 500rpx;
   height: 500rpx;
   border: 2rpx solid #000000;
-  margin: 200rpx auto;
+  transition: all 0.3;
 }
 
 .box {
+  position: fixed;
+  inset: 0;
+  top: 0px;
+  left: 0px;
   width: 200rpx;
   height: 200rpx;
-  background-color: red;
+  background-color: black;
+  transition: all 0.3;
+}
+
+.box2 {
   position: absolute;
-  top: 0;
-  left: 0;
-  transition: top 0.5s, left 0.5s;
+  top: 0px;
+  left: 0px;
+  width: 200rpx;
+  height: 200rpx;
+  background-color: green;
+  transition: all 0.3;
 }
 
 .box.active {
