@@ -1,4 +1,12 @@
-<scroll-view scroll-y="{{isScroll}}" style="height: 100vh;overflow-anchor: none;" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" binddragend="binddragend" bindanimationend="bindanimationend" bindtransitionend="bindtransitionend" scroll-anchoring="{{true}}" scroll-with-animation="{{true}}" enhanced="{{true}}" enable-passive="{{true}}" bounces="{{false}}" throttle="{{false}}">
+<!-- <scroll-view scroll-y="{{isScroll}}" style="height: 100vh;overflow-anchor: none;" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" binddragend="binddragend" bindanimationend="bindanimationend" bindtransitionend="bindtransitionend" scroll-anchoring="{{true}}" scroll-with-animation="{{true}}" enhanced="{{true}}" enable-passive="{{true}}" bounces="{{false}}" throttle="{{false}}">
+  <view class="scroll-view-item" style="background-color: red;">A</view>
+  <view class="scroll-view-item" style="background-color: yellowgreen;">B</view>
+  <view class="scroll-view-item" style="background-color: burlywood;">C</view>
+  <view class="scroll-view-item" style="background-color: yellow;">D</view>
+  <view class="scroll-view-item" style="background-color: rebeccapurple;">E</view>
+  <view class="scroll-view-item" style="background-color: blue;">F</view>
+</scroll-view> -->
+<scroll-view class="scroll-view" style="height: 100vh;overflow-anchor: none;" scroll-y="{{isScroll}}" scroll-top="{{scrollTop}}" enhanced="{{true}}" bounces="{{false}}" scroll-with-animation="{{true}}" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" bindscrolltolower="scrolltolower" bindscroll="scroll2">
   <view class="scroll-view-item" style="background-color: red;">A</view>
   <view class="scroll-view-item" style="background-color: yellowgreen;">B</view>
   <view class="scroll-view-item" style="background-color: burlywood;">C</view>

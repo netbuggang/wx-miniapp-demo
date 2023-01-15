@@ -40,7 +40,7 @@
     "minifyWXML": true,
     "ignoreUploadUnusedFiles": true
   },
-  "appid": "wx826b09120e82dd4c",
+  "appid": "wx9198b21cfe5545f4",
   "projectname": "quickstart-wx-cloud",
   "libVersion": "2.14.1",
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
