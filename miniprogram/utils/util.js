@@ -97,7 +97,16 @@ export function Throttle(fn, delay = 300) {
     }, delay);
   };
 }
-
+function throttle2(fn, wait) {
+  let pre = 0;
+  return function () {
+      let now = Date.now()
+      if (now - pre > wait) {
+          fn()
+          pre = now
+      }
+  }
+}
 /**
  * 获取小程序当前页面地址
  */
