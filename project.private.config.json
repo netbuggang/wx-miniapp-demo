@@ -81,6 +81,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "exercise/pages/verticalSwiper/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

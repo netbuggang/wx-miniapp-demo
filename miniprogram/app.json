@@ -34,7 +34,8 @@
         "pages/swiper/index",
         "pages/marquee/index",
         "pages/marquee-wxs/index",
-        "pages/scrollView2/index"
+        "pages/scrollView2/index",
+        "pages/verticalSwiper/index"
       ]
     }
   ],
